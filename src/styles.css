@@ -176,6 +176,18 @@ h1 {
   will-change: transform;
 }
 
+.banner__action {
+  border: 1px solid white;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.banner__action:hover {
+  border-color: var(--color-gray-700);
+  transition: border-color 0.3s ease-in;
+}
+
 .happy.banner {
   background: var(--color-success);
   color: white;

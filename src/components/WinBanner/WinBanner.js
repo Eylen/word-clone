@@ -1,8 +1,9 @@
 import React from 'react';
+import Banner from '../Banner';
 
-function WinBanner({numGuesses}) {
+function WinBanner({numGuesses, handleRestart}) {
   return (
-    <div className="happy banner">
+    <Banner status="happy" action={handleRestart} actionText="Restart game">
       <p>
         <strong>Congratulations!</strong> Got it in
         <strong>
@@ -10,7 +11,7 @@ function WinBanner({numGuesses}) {
         </strong>
         .
       </p>
-    </div>
+    </Banner>
   );
 }
 

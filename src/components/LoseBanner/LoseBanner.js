@@ -1,12 +1,13 @@
 import React from 'react';
+import Banner from '../Banner';
 
-function LoseBanner({answer}) {
+function LoseBanner({answer, handleRestart}) {
   return (
-    <div className="sad banner">
+    <Banner status="sad" action={handleRestart} actionText="Restart game">
       <p>
         Sorry, the correct answer is <strong>{answer}</strong>.
       </p>
-    </div>
+    </Banner>
   );
 }
 
