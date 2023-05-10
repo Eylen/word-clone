@@ -7,6 +7,8 @@ import GuessResults from '../GuessResults';
 import {NUM_OF_GUESSES_ALLOWED} from '../../constants';
 import WinBanner from '../WinBanner';
 import LoseBanner from '../LoseBanner';
+import Keyboard from '../Keyboard/Keyboard';
+import {checkGuess} from '../../game-helpers';
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
 // To make debugging easier, we'll log the solution in the console.
@@ -27,10 +29,13 @@ function Game() {
     }
   };
 
+  const validatedGuesses = guesses.map((guess) => checkGuess(guess, answer));
+
   return (
     <>
-      <GuessResults guesses={guesses} answer={answer} />
+      <GuessResults guesses={validatedGuesses} />
       <GuessInput handleSubmit={handleSubmit} disabled={!!status} />
+      <Keyboard guesses={validatedGuesses} />
       {status === 'won' && <WinBanner numGuesses={guesses.length} />}
       {status === 'lost' && <LoseBanner answer={answer} />}
     </>
