@@ -176,6 +176,18 @@ h1 {
   will-change: transform;
 }
 
+.banner__action {
+  border: 1px solid white;
+  padding: 4px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.banner__action:hover {
+  border-color: var(--color-gray-700);
+  transition: border-color 0.3s ease-in;
+}
+
 .happy.banner {
   background: var(--color-success);
   color: white;
@@ -217,6 +229,44 @@ h1 {
 }
 .modal-title {
   margin-bottom: 0.5em;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.keyboard__row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.keyboard__letter {
+  cursor: pointer;
+  display:grid;
+  place-content: center;
+  background: var(--color-gray-900);
+  font-weight: 700;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+.keyboard__letter.correct {
+  color: white;
+  background: var(--color-success);
+}
+
+.keyboard__letter.misplaced {
+  color: white;
+  background: var(--color-warning);
+}
+
+.keyboard__letter.incorrect {
+  color: white;
+  background: var(--color-gray-300);
 }
 
 /*
